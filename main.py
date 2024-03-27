@@ -16,58 +16,63 @@
 
 Ваш ответ: Бишкек
 """
+# def start_game():
+#     attempts = 4
+#     text = 'азбука'
+#     text_len = len(text)
+#     text_stars = '*' * text_len
+#     temp = ''
+#     answer = ''
+    
+#     print('Что учат в первую очерь при изучении любого языка ?')
+#     print(f'Слово состоит из {text_len} букв: {text_stars}\n')
 
-# text = 'азбука'
-# answer_text = ''
-# answer_text_final = ''
-# failed_count = 0
+#     while True:
+#         char = input('Буква: ')
 
-# text_stars = '*' * len(text)
-# answer = ''
-# print(text_stars)
+#         if char not in text:
+#             attempts -= 1
+#             print(f'Буквы {char} нет в слове')
+#             if attempts == 0:
+#                 print('Попытки исчерпаны, вы провалили')
+#                 break
+#             print(f'У вас осталось {attempts} попыт.')
+#             continue
+        
+#         if char in answer:
+#             attempts -= 1
+#             print('Буква ранее уже была угада вами, но мы все равно вас \
+#                    оштрафуем. Минус попытка.')
+#             print(f'У вас осталось {attempts} попыт.')
+#             continue
 
-# while True:
-#     char = input('Скажите букву: ')
-#     if char in text:
-#         for i, c in enumerate(text):
-#             if char != c:
-#                 text = text.replace(char, '*')
+#         for i, t in enumerate(text_stars):
+#             if text[i] == char:
+#                 temp += char
 #             else:
-#                 continue
-
-#     print(text)
-
-
-# while True:
-#     char = input('Скажите букву: ')
-
-#     if char in text:
-#         if char in answer_text or char in answer_text_final:
-#             print('Буква уже угадана')
+#                 if text_stars[i] != '*':
+#                     temp += text_stars[i]
+#                 else:
+#                     temp += '*'
+        
+#         text_stars = temp
+#         temp = ''
+#         answer = text_stars
+        
+#         if '*' not in answer:
+#             print(f'Поздравляем, вы угадали слово! {answer.upper()}')
+#             break
 #         else:
-#             if answer_text != '':
-#                 for i, a in enumerate(answer_text):
-#                     if a != '*':
-#                         answer_text_final += a
-#                     else:
-#                         char_index = text.index(char)
-#                         if i == char_index:
-#                             answer_text_final += text[i]
-#                         else:
-#                             answer_text_final += '*'
+#             print(f'Вы угадали букву "{char}": {answer}')
+#             print(f'Нужно угодать еще {answer.count("*")} буквы')
 
-#                 print(f'Буква {char} есть в слове')
-#                 print(answer_text_final)
-#             else:
-#                 for c in text:
-#                     if c == char:
-#                         answer_text += char
-#                     else:
-#                         answer_text += '*'
 
-#                 print(f'Буква {char} есть в слове')
-#                 print(answer_text)
+# start_game()
 
+
+"""
+Задача
+"""
 
 
 # class TriangleChecker:
@@ -122,35 +127,40 @@
 
 # triangle.is_triangle()
 
-from math import pi
 
-class Shape:
+"""
+Задача
+"""
 
-    def __init__(self, name) -> None:
-        self.name = name
+# from math import pi
 
-    def get_area(self):
-        pass
+# class Shape:
 
+#     def __init__(self, name) -> None:
+#         self.name = name
 
-
-class Triangle(Shape):
-
-    def __init__(self, name, height, a, b, c) -> None:
-        super().__init__(name)
-        self.__a = a
-        self.__b = b
-        self.__c = c
-        self.__height = height
-
-    def get_area(self):
-        return (1/2) * self.__a * self.__height
+#     def get_area(self):
+#         pass
 
 
-class Circle(Shape):
-    def __init__(self, name, radius) -> None:
-        super().__init__(name)
-        self.__radius = radius
 
-    def get_area(self):
-        return pi * (pow(self.__radius, 2))
+# class Triangle(Shape):
+
+#     def __init__(self, name, height, a, b, c) -> None:
+#         super().__init__(name)
+#         self.__a = a
+#         self.__b = b
+#         self.__c = c
+#         self.__height = height
+
+#     def get_area(self):
+#         return (1/2) * self.__a * self.__height
+
+
+# class Circle(Shape):
+#     def __init__(self, name, radius) -> None:
+#         super().__init__(name)
+#         self.__radius = radius
+
+#     def get_area(self):
+#         return pi * (pow(self.__radius, 2))
